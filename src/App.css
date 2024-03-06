@@ -1,15 +1,28 @@
 :root {
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow	 : 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+
+  --bg-main: #e5e7eb;
   --btn-bg-selected: #E5E8FD;
   --btn-bg: #F4F6F8;
   --radius: 10px;
-  --border-color: #d9d9d9;
+  --border-color: #e5e7eb;
+  --padding: 15px;
+  --default-shadow: var(--shadow)
+
+}
+
+body {
+  background:var(--bg-main);
 }
 
 .app {
   max-width: 500px;
   margin: 0 auto;
-
-
 }
 
 .btn {
@@ -22,21 +35,29 @@
   background: var(--btn-bg);
 }
 
+.multiple-upvotes-lists {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: white;
+  border-radius: var(--radius);
+  padding: calc(var(--padding)* 1.2);
+  box-shadow: var(--default-shadow);
+}
+
 .upvotes-wrapper {
   display: flex;
   align-items: center;
- 
-  gap: 15px;
+  gap: 10px;
 }
 
 .upvotes-list {
   display: flex;
   flex:1;
-  gap: 5px;
-  padding: 10px;
+  gap: 10px;
+  padding: calc(var(--padding) / 2 );
   height: 47px;
   border: 1px solid var(--border-color);
-  margin: 4px;
   border-radius: var(--radius);
   overflow: auto;
 
