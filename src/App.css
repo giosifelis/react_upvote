@@ -1,11 +1,20 @@
 :root {
   --btn-bg-selected: #E5E8FD;
   --btn-bg: #F4F6F8;
+  --radius: 10px;
+  --border-color: #d9d9d9;
+}
+
+.app {
+  max-width: 500px;
+  margin: 0 auto;
+
+
 }
 
 .btn {
   padding: 10px;
-  border-radius: 5px;
+  border-radius: var(--radius);
   cursor: pointer;
   display: inline-block;
   outline:none;
@@ -13,6 +22,22 @@
   background: var(--btn-bg);
 }
 
-.btn-selected {
-  background: var(--btn-bg-selected)
+.upvotes-wrapper {
+  display: flex;
+  align-items: center;
+ 
+  gap: 15px;
+}
+
+.upvotes-list {
+  display: flex;
+  flex:1;
+  gap: 5px;
+  padding: 10px;
+  height: 47px;
+  border: 1px solid var(--border-color);
+  margin: 4px;
+  border-radius: var(--radius);
+  overflow: auto;
+
 }

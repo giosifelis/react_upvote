@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 
 import { ReactComponent as ArrowIcon } from '../assets/arrow.svg'
+import { theme } from '../Theme'
+
+const { icon, btn } = theme
 
 const Upvote = ({ selected, onClick }) => {
   const [isSelected, setIsSelected] = useState(selected)
@@ -12,11 +15,14 @@ const Upvote = ({ selected, onClick }) => {
 
   return (
     <button
-      data-testid="primary"
-      className={`btn upvote ${isSelected ? 'btn-selected' : ''}`}
+      data-testid="upvote"
+      className="btn upvote"
       onClick={handleClick}
+      style={{ background: isSelected ? btn.selected.bg : btn.bg }}
     >
-      <ArrowIcon style={{ fill: isSelected ? '#253CF2' : '#343A40' }} />
+      <ArrowIcon
+        style={{ fill: isSelected ? icon.selected.fill : icon.fill }}
+      />
     </button>
   )
 }

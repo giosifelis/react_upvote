@@ -8,36 +8,18 @@ import Upvote from './Upvote'
 describe('Upvote component', () => {
   test('renders with correct initial state', () => {
     render(<Upvote selected={false} />)
-    const button = screen.getByTestId('primary')
+    const button = screen.getByTestId('upvote')
 
     expect(button).toBeInTheDocument()
-    expect(button).not.toHaveClass('btn-selected')
+    expect(button).toHaveClass('btn')
   })
 
-  // test('toggles selected state on click', () => {
-  //   const handleClick = jest.fn()
-  //   const { getByTestId } = render(
-  //     <Upvote selected={false} onClick={handleClick} />
-  //   )
-  //   const button = getByTestId('primary')
+  test('toggles selected state on click', () => {
+    const handleClick = jest.fn()
+    render(<Upvote selected={false} onClick={handleClick} />)
+    const button = screen.getByTestId('upvote')
 
-  //   fireEvent.click(button)
-
-  //   expect(button).toHaveClass('btn-selected')
-  //   expect(handleClick).toHaveBeenCalledWith(true)
-  // })
-
-  // test('passes correct selected state to parent on click', () => {
-  //   const handleClick = jest.fn()
-  //   const { getByTestId } = render(
-  //     <Upvote selected={false} onClick={handleClick} />
-  //   )
-  //   const button = getByTestId('primary')
-
-  //   fireEvent.click(button)
-  //   fireEvent.click(button)
-
-  //   expect(handleClick).toHaveBeenCalledWith(true)
-  //   expect(handleClick).toHaveBeenCalledWith(false)
-  // })
+    fireEvent.click(button)
+    expect(handleClick).toHaveBeenCalledWith(true)
+  })
 })
